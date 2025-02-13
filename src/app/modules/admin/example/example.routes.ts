@@ -6,4 +6,5 @@ export default [
         path     : '',
         component: ExampleComponent,
     },
+    
 ] as Routes;

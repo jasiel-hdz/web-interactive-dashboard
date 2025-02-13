@@ -3,11 +3,25 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'viewers',
+        title: 'Observadores Identificados',
+        type : 'basic',
+        icon : 'heroicons_outline:eye',
+        link : '/viewers'
+    },
+    {
+        id   : 'ots',
+        title: 'Observadores No Identificados',
+        icon : 'heroicons_outline:eye-slash',
+        type : 'basic',
+        link : '/ots'
+    },
+    {
+        id   : 'vs',
+        title: 'Comparar Observadores',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/vs'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [

@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full">
   <div *ngFor="let item of cardsViewers"  class="bg-card flex flex-col items-center justify-center w-full  p-2 md:p-4  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl">
-    <p class="w-full font-semibold text-center mb-4">{{item.title}}</p>
+    <h2 class="w-full font-semibold text-center mb-4">{{item.title}}</h2>
     <h3 class="text-8xl font-semibold leading-none" [ngClass]="item.colorClass">{{item.primaryValue}}</h3>
     <h4 class="font-medium text-lg" [ngClass]="item.colorClass">{{item.primaryValueText}}</h4>
     <span class="mt-4">

@@ -1,0 +1,34 @@
+<div class="grid grid-cols-1 gap-4">
+  <span>
+    <h1 class="font-bold text-3xl leading-none">Observadores Anuales</h1>
+    <p class="text-gray-400">
+      "Explora las estadísticas de observadores no identificados durante el
+      <span class="font-semibold text-lg text-blue-500">AÑO</span>, mostrando la distribución por mes."
+    </p>
+  </span>
+
+  <div class="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full">
+    <div class="col-span-4 lg:col-span-1 bg-card flex flex-col items-center justify-center w-full p-4 md:p-6  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl gap-4 md:gap-6">
+      <app-doughnut-chart></app-doughnut-chart>
+    </div>
+    <div class="col-span-4 lg:col-span-3 bg-card flex flex-col items-center justify-center w-full p-4 md:p-6 shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl">
+      <div class="flex flex-col justify-center items-start w-full">
+        <h4 class="text-gray-500 mb-4">Descripción general</h4>
+        <div class="grid grid-cols-1 w-full">
+          <div class="grid grid-cols-12 gap-4 w-full">
+            
+            <div *ngFor="let data of monthlyData" class="col-span-4 lg:col-span-2 bg-gray-100 p-6 rounded-xl">
+              <h4 class="text-gray-500">{{ data.mes }}</h4>
+              <h3 class="text-3xl font-semibold leading-none" [ngStyle]="{ 'color': data.color }">{{ data.cantidad | number }}</h3>
+              <h4 class="font-medium text-lg text-gray-500">Cantidad</h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

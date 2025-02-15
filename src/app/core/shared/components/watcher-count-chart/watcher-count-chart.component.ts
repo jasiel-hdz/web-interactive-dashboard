@@ -12,9 +12,8 @@ export class WatcherCountChartComponent implements OnInit {
   @ViewChild('lineChart', { static: true }) lineChart: ElementRef | undefined;
 
   ngOnInit(): void {
-    Chart.register(...registerables);  // Registramos los elementos necesarios para Chart.js
+    Chart.register(...registerables);
 
-    // Datos simulados o puedes traerlos desde una API
     const apiData = [
       { "period_start_date": "2024-11-01", "watcher_count": 0 },
       { "period_start_date": "2024-11-02", "watcher_count": 5 },
@@ -29,20 +28,17 @@ export class WatcherCountChartComponent implements OnInit {
       { "period_start_date": "2024-11-11", "watcher_count": 11 }
     ];
     
-    // Crear el gráfico de líneas
     new Chart(this.lineChart?.nativeElement, {
       type: 'line',
       data: {
-        labels: apiData.map(item => item.period_start_date), // Fechas en el eje X
+        labels: apiData.map(item => item.period_start_date),
         datasets: [{
           label: 'Número de Espectadores',
-          data: apiData.map(item => item.watcher_count), // Número de espectadores en el eje Y
-          // borderColor: 'rgba(101, 117, 139, 1)',
-          // backgroundColor: 'rgba(200, 205, 212, 1)',
+          data: apiData.map(item => item.watcher_count),
           borderColor: 'rgba(129, 140, 247, 1)',
-          backgroundColor: 'rgba(49, 55, 92, 0.6)',//'rgba(49, 55, 92, 0.7)',  // Fondo de la línea (transparente)
-          fill: true,  // Llenar el área debajo de la línea
-          tension: 0.4  // Curvatura de la línea
+          backgroundColor: 'rgba(49, 55, 92, 0.6)',
+          fill: true,
+          tension: 0.4
         }]
       },
       options: {
@@ -52,7 +48,6 @@ export class WatcherCountChartComponent implements OnInit {
           x: {
             title: {
               display: true,
-              // text: 'Fecha'  // Etiqueta para el eje X
             },
             grid: {
               display: false,
@@ -61,7 +56,6 @@ export class WatcherCountChartComponent implements OnInit {
           y: {
             title: {
               display: false,
-              // text: 'Número de Espectadores'  // Etiqueta para el eje Y
             },
             grid: {
               display: false,
@@ -71,7 +65,7 @@ export class WatcherCountChartComponent implements OnInit {
         plugins: {
           legend: {
             display: true,
-            position: 'top'  // Posición de la leyenda
+            position: 'top'
           }
         }
       }

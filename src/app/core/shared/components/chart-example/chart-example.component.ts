@@ -36,15 +36,15 @@ export class ChartExampleComponent implements OnInit {
         datasets: [
           {
             label: 'Observadores No Identificados',
-            data: [12, 19, 3, 5, 2, 11, 1], // Primer conjunto de datos
-            backgroundColor: 'rgba(148, 163, 184, 1)', // Color de las barras del primer conjunto
+            data: [12, 19, 3, 5, 2, 11, 1],
+            backgroundColor: 'rgba(148, 163, 184, 1)',
             borderColor: 'rgba(148, 163, 184, 1)',
             borderWidth: 1
           },
           {
             label: 'Duración de Observación',
-            data: [8, 14, 7, 6, 4, 9, 3], // Segundo conjunto de datos
-            backgroundColor: 'rgba(129, 140, 247, 1)', // Color de las barras del segundo conjunto
+            data: [8, 14, 7, 6, 4, 9, 3],
+            backgroundColor: 'rgba(129, 140, 247, 1)',
             borderColor: 'rgba(129, 140, 247, 1)',
             borderWidth: 1
           }
@@ -53,17 +53,17 @@ export class ChartExampleComponent implements OnInit {
       options: {
         plugins: {
           legend: {
-            display: true // Mostrar la leyenda para identificar ambos datasets
+            display: true
           }
         },
         scales: {
           x: {
             grid: {
-              display: false // Ocultar las líneas de la cuadrícula en el eje X
+              display: false
             }
           },
           y: {
-            beginAtZero: true // Comenzar el eje Y desde cero
+            beginAtZero: true
           }
         }
       }
@@ -72,7 +72,6 @@ export class ChartExampleComponent implements OnInit {
 
   onSelectionChange(event: any): void {
     console.log('Selected option:', this.selectedOption);
-    // Puedes agregar aquí el comportamiento de cada opción seleccionada
     if (this.selectedOption === 'lastWeek') {
       this.executeLastWeekAction();
     } else if (this.selectedOption === 'thisWeek') {
@@ -80,15 +79,12 @@ export class ChartExampleComponent implements OnInit {
     }
   }
 
-  // Acciones para las diferentes opciones
   executeLastWeekAction() {
     console.log('Executing action for Last Week');
-    // Lógica para la semana pasada
   }
 
   executeThisWeekAction() {
     console.log('Executing action for This Week');
-    // Lógica para esta semana
   }
 
 }

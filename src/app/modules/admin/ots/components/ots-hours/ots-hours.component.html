@@ -1,0 +1,52 @@
+<div class="grid grid-cols-1 gap-4">
+  <span>
+    <h1 class="font-bold text-3xl leading-none">OTS por día</h1>
+  <p class="text-gray-400">
+    "Explora las estadísticas de observadores no identificados durante el
+    <span class='font-semibold text-lg text-blue-500'>DÍA</span>, mostrando las horas con más registros."
+  </p>
+  </span>
+
+  <div class="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full">
+  
+    <div class="col-span-4 lg:col-span-3 bg-card flex flex-col items-center justify-center w-full  p-4 md:p-6  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl gap-4 md:gap-6">
+      <mat-button-toggle-group class="w-full flex justify-end" [(ngModel)]="selectedOption" (change)="onSelectionChange($event)">
+        <mat-button-toggle value="yesterday">
+          Ayer
+        </mat-button-toggle>
+        <mat-button-toggle value="today">
+          Hóy
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <app-line-chart></app-line-chart>
+    </div>
+  
+    <div class="col-span-4 lg:col-span-1 bg-card flex flex-col items-center justify-center w-full p-4 md:p-6 shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl">
+      <h2 class="w-full font-medium text-center mb-4 text-lg">Horas con Más Registros</h2>
+      
+      <div class="w-full space-y-2">
+        <div class="flex justify-between items-center p-3 border-b-2 border-gray-200 text-gray-500">
+          <span class="flex justify-center items-center">
+            <span class="text-lg mr-2 ">08:00 AM</span>
+            <span class="material-icons ">access_time</span>
+          </span>
+          <span class="text-gray-500">50 registros</span>
+        </div>
+        <div class="flex justify-between items-center p-3 border-b-2 border-gray-200 text-gray-500">
+          <span class="flex justify-center items-center">
+            <span class="text-lg mr-2">12:00 PM</span>
+            <span class="material-icons">access_time</span>
+          </span>
+          <span class="text-gray-500">75 registros</span>
+        </div>
+        <div class="flex justify-between items-center p-3 border-b-2 border-gray-200 text-gray-500">
+          <span class="flex justify-center items-center">
+            <span class="text-lg mr-2">03:00 PM</span>
+            <span class="material-icons">access_time</span>
+          </span>
+          <span class="text-gray-500">60 registros</span>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>

@@ -1,1 +1,16 @@
-<h1>View page</h1>
+<div class="grid grid-cols-1 gap-y-4 md:gap-y-6 w-full !h-auto">
+    
+    <app-card-count-day
+      title="Observadores Identificados"
+      [cardsCountDay]="cardsCountDay"
+    ></app-card-count-day>
+    
+    <app-cart-week
+      [idBarChart]="idBarChart"
+      [dataChart]="barChartViewers"
+      [measurements]="['', 'Sec']"
+    ></app-cart-week>
+    <app-ots-hours></app-ots-hours>
+    <app-watcher-anual-chart></app-watcher-anual-chart>
+    <app-watcher-count-chart></app-watcher-count-chart>
+  </div>

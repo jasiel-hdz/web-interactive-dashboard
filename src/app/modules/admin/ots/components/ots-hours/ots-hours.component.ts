@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { LineChartComponent } from 'app/core/shared/components/line-chart/line-chart.component';
+import { LineChartComponent } from 'app/core/shared/components/charts/line-chart/line-chart.component';
 
 @Component({
   selector: 'app-ots-hours',

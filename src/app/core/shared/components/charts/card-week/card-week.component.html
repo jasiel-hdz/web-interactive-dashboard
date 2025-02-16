@@ -1,0 +1,39 @@
+<div class="bg-card grid grid-cols-2 gap-16 w-full p-4 md:p-8 shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl">
+  <div class="flex flex-col w-full">
+    <h2 class="w-full font-semibold text-start mb-4">{{title}}</h2>
+    @if (idBarChart && dataChart) {
+      <app-bar-chart
+        [idBarChart]="idBarChart"
+        [dataChart]="dataChart"
+      ></app-bar-chart>
+    }
+    
+  </div>
+
+  <div class="flex flex-col justify-center items-center gap-4 mid:gap-16">
+    
+    <mat-button-toggle-group class="w-full flex justify-end" [(ngModel)]="selectedOption" (change)="onSelectionChange($event)">
+      <mat-button-toggle value="lastWeek">
+        Semana pasada
+      </mat-button-toggle>
+      <mat-button-toggle value="thisWeek">
+        Esta semana
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    @if (idBarChart && dataChart) {
+      <div class="flex flex-col justify-center items-start w-full">
+        <h4 class="text-gray-500 mb-4">Descripción general</h4>
+        <div class="grid grid-cols-1 w-full">
+          <div class="grid grid-cols-4 gap-4 w-full">
+            
+            <div *ngFor="let item of cardCountWeek" class="p-6 rounded-xl flex flex-col justify-center" [ngClass]="item.colorClass">
+              <h3 class="text-6xl font-semibold leading-none" [ngClass]="item.textColor">{{item.value}} <small class="text-md">{{item.measurements | titlecase }}</small></h3>
+              <h4 class="font-medium text-lg" [ngClass]="item.textColor">{{item.title}} <small class="text-sd font-extralight">{{item.type | titlecase }}</small></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

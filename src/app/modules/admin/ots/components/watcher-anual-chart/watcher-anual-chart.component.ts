@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { DoughnutChartComponent } from 'app/core/shared/components/doughnut-chart/doughnut-chart.component';
+import { DoughnutChartComponent } from 'app/core/shared/components/charts/doughnut-chart/doughnut-chart.component';
 
 @Component({
   selector: 'app-watcher-anual-chart',

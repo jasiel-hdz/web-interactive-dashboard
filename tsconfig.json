@@ -3,6 +3,9 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./src",
+        "paths": {
+            "@interfaces/*": ["src/app/coreinterfaces/*"]
+        },
         "outDir": "./dist/out-tsc",
         "esModuleInterop": true,
         "sourceMap": true,

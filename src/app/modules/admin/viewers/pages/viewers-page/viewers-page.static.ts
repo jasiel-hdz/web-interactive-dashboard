@@ -1,3 +1,5 @@
+import { Emotion } from "app/core/const/enums/emotion.enum";
+
 export const CARD_COUNT_HOURS = [
     {
       id: 1,
@@ -77,4 +79,21 @@ export const BAR_CHART_VIEWERS = {
         }
       }
     }
-  }
+}
+
+export const PIE_CHART_PAY = {
+  labels: [
+    Emotion.very_happy,   // "Muy Feliz"
+    Emotion.happy,        // "Feliz"
+    Emotion.neutral,      // "Neutral"
+    Emotion.unhappy,      // "Triste"
+    Emotion.very_unhappy 
+  ],
+  datasets: [
+    {
+      data: [2.0, 3.0, 3.0, 4.0, 2.0],
+      backgroundColor: ['#22C55E', '#A855F7', '#EAB308', '#EF4444', '#5365FF'],
+      hoverOffset: 4
+    }
+  ]
+};

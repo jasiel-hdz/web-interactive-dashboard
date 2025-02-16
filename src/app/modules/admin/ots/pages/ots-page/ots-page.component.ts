@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OtsHoursComponent } from '../../components/ots-hours/ots-hours.component';
 import { CardViewersCountComponent } from 'app/core/shared/components/rows/card-viewers-count/card-count-day.component';
 import { WatcherCountChartComponent } from '../../../../../core/shared/components/rows/watcher-count-chart/watcher-count-chart.component';
-import { ChartExampleComponent } from 'app/core/shared/components/charts/card-week/card-week.component';
+import { ChartExampleComponent } from 'app/core/shared/components/rows/card-week/card-week.component';
 import { MatIconModule } from '@angular/material/icon';
 import { WatcherAnualChartComponent } from '../../components/watcher-anual-chart/watcher-anual-chart.component';
 import { CardCountDay } from 'app/core/interfaces/shared/card-count-day.interface';

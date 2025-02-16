@@ -1,0 +1,35 @@
+<div class="mb-6">
+  <h1 class="font-bold text-3xl leading-none">{{title}}</h1>
+  <p class="text-gray-400">
+    "Este reporte muestra el estado emocional de los observadores frente a los anuncios 
+    <span class='font-semibold text-lg text-blue-500'>durante el mes actual</span>, indicando qué emociones han predominado y su impacto en la experiencia del espectador."
+  </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 w-full">
+  
+  <div  class="col-span-4 md:col-span-1 bg-card flex flex-col items-center justify-center w-full  p-4 md:p-6  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl">
+    <h3 class="w-full font-semibold text-center mb-4">Estado emocional de los espectadores</h3>
+    <app-pie-chart
+      [idPieChart]="idPieChart"
+      [dataChart]="dataChart"
+    ></app-pie-chart>
+  </div>
+
+  <div  class="col-span-4 md:col-span-3 grid grid-cols-2 bg-card p-4 md:p-6  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl gap-6 w-full">
+    <div *ngFor="let item of dataChart?.datasets[0].data; let i = index" 
+      class="p-4 rounded-xl flex justify-around items-center w-full" 
+      [ngClass]="[
+      i === 0 ? 'col-span-2' : 'col-span-1',
+      colorClasses[i]?.backgroundColor
+    ]">
+      <h3 class="text-4xl font-semibold leading-none" [ngClass]="colorClasses[i].textColor">
+        {{ labels[i] }}
+      </h3>
+      <small class="text-4xl font-light leading-none" [ngClass]="colorClasses[i].textColor">{{ item | number:'1.0-0' }}</small>
+    </div>
+    <ng-template #noData>
+      <h2 class="w-full font-semibold text-center mb-4">No hay datos para mostrar</h2>
+    </ng-template>
+  </div>
+</div>

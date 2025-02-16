@@ -5,7 +5,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { Chart, registerables } from 'chart.js';
 import { FormsModule } from '@angular/forms';
-import { BarChartComponent } from '../bar-chart/bar-chart.component';
+import { BarChartComponent } from '../../charts/bar-chart/bar-chart.component';
 import { CommonModule } from '@angular/common';
 import { CARD_COUNT_WEEK } from './card-week.static';
 

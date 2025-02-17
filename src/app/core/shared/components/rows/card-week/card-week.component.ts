@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { BarChartComponent } from '../../charts/bar-chart/bar-chart.component';
 import { CommonModule } from '@angular/common';
 import { CARD_COUNT_WEEK } from './card-week.static';
+import { OtsService } from 'app/core/services/Ots.service';
 
 @Component({
-  selector: 'app-cart-week',
+  selector: 'app-card-week',
   templateUrl: './card-week.component.html',
   styleUrls: ['./card-week.component.css'],
   imports: [
@@ -31,7 +32,7 @@ export class ChartExampleComponent implements OnInit {
   selectedOption: 'lastWeek' | 'thisWeek' = 'thisWeek';
   cardCountWeek: CardCountWeek[] = CARD_COUNT_WEEK;
 
-  constructor() {
+  constructor(private otsService: OtsService) {
     
   }
 
@@ -40,7 +41,6 @@ export class ChartExampleComponent implements OnInit {
   }
 
   onSelectionChange(event: any): void {
-    console.log('Selected option:', this.selectedOption);
     if (this.selectedOption === 'lastWeek') {
       this.executeLastWeekAction();
     } else if (this.selectedOption === 'thisWeek') {
@@ -49,6 +49,13 @@ export class ChartExampleComponent implements OnInit {
   }
 
   initData() {
+    // Suscribe to the otsWeek$ observable
+    this.otsService.otsWeek$.subscribe((otsWeek) => {
+      if (otsWeek) {
+        this.mapToCardCountWeek();
+      }
+    });
+
     this.mapToCardCountWeek();
 
   }

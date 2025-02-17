@@ -22,7 +22,7 @@ import { OtsService } from 'app/core/services/Ots.service';
 
 })
 export class DaySelectorComponent implements OnInit {
-  dateSelected: Date = moment().toDate();
+  dateSelected: Date = moment('2024/11/01', 'YYYY/MM/DD').toDate();
   constructor(private otsService: OtsService) { 
   }
 

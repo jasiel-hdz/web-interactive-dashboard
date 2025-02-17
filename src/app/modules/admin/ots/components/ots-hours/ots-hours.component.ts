@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -15,10 +16,15 @@ import { LineChartComponent } from 'app/core/shared/components/charts/line-chart
     MatButtonToggleModule,
     FormsModule,
     LineChartComponent,
+    CommonModule,
   ],
   })
 export class OtsHoursComponent implements OnInit {
   selectedOption: 'today' | 'yesterday' = 'today';
+  @Input() idLineChart: string = '';
+  @Input() dataChart: any = {};
+  @Input() top3 = [];
+
   constructor() { }
 
   ngOnInit() {

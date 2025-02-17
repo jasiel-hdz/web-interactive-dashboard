@@ -37,6 +37,7 @@ export class PieChartComponent implements AfterViewInit {
     new Chart(ctx, {
       type: 'pie',
       data: this.dataChart,
+      
       options: {
         responsive: true,
         maintainAspectRatio: false,

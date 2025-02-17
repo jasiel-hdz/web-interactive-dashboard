@@ -5,12 +5,17 @@
   ></app-card-count-day>
   
 
-  <app-cart-week
+  <app-card-week
     title="OTS gráfico semanal"
     [idBarChart]="idBarChart"
     [dataChart]="barChartOTS"
-  ></app-cart-week>
-  <app-ots-hours></app-ots-hours>
+  ></app-card-week>
+  
+  <app-ots-hours
+  [dataChart]="lineChartOTS"
+  [idLineChart]="idLineChart"
+  [top3]="top3Ots"
+  ></app-ots-hours>
+
   <app-watcher-anual-chart></app-watcher-anual-chart>
-  <app-watcher-count-chart></app-watcher-count-chart>
 </div>

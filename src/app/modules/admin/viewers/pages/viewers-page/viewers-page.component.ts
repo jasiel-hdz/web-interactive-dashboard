@@ -8,6 +8,7 @@ import { OtsHoursComponent } from 'app/modules/admin/ots/components/ots-hours/ot
 import { WatcherAnualChartComponent } from 'app/modules/admin/ots/components/watcher-anual-chart/watcher-anual-chart.component';
 import { BAR_CHART_VIEWERS, CARD_COUNT_HOURS, PIE_CHART_PAY } from './viewers-page.static';
 import { CardComparativePayComponent } from 'app/core/shared/components/rows/card-comparative-pay/card-comparative-pay.component';
+import { ViewersService } from 'app/core/services/viewers.service';
 @Component({
   selector: 'app-viewers-page',
   standalone: true,
@@ -31,9 +32,31 @@ export class ViewersPageComponent implements OnInit {
   // pay chart
   public idPieChart = 'payChartEmotions';
   public dataPieChart = PIE_CHART_PAY;
-  constructor() { }
+  
+  constructor(private viewersService : ViewersService) { }
 
   ngOnInit() {
+    // Suscribe to the viewersDay$ observable
+    this.viewersService.viewersDay$.subscribe((viewersDay) => {
+      if (viewersDay) {
+        this.updatecardsCountDay(viewersDay);
+      }
+    });
+    // Suscribe to the viewersWeek$ observable
+
+  }
+
+  updatecardsCountDay(viewersDay) {
+    const { avg_age, total_male, total_female, total_viewers } = viewersDay;
+    console.log('Viewers day:', viewersDay);
+    this.cardsCountDay[0].primaryValue = total_viewers;
+    this.cardsCountDay[0].secondaryValue = total_viewers;
+    this.cardsCountDay[1].primaryValue = avg_age;
+    this.cardsCountDay[1].secondaryValue = avg_age;
+    this.cardsCountDay[2].primaryValue = total_male;
+    this.cardsCountDay[2].secondaryValue = total_male;
+    this.cardsCountDay[3].primaryValue = total_female;
+    this.cardsCountDay[3].secondaryValue = total_female;
   }
 
 }

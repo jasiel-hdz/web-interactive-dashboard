@@ -16,7 +16,11 @@
       [dataChart]="barChartViewers"
       [measurements]="['', 'Sec']"
     ></app-card-week>
-    <app-ots-hours></app-ots-hours>
+    <app-ots-hours
+    [dataChart]="dataLineChart"
+    [idLineChart]="idLineChart"
+    [top3]="top3Ots"
+  ></app-ots-hours>
     <!-- <app-watcher-count-chart></app-watcher-count-chart> -->
     <!-- <app-watcher-anual-chart></app-watcher-anual-chart> -->
   </div>

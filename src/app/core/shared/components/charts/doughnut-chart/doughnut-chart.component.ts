@@ -42,6 +42,7 @@ export class DoughnutChartComponent implements OnInit {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: 'bottom',

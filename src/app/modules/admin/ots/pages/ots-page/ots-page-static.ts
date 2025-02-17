@@ -118,7 +118,7 @@ export const BAR_CHART_OTS = {
           y: {
             title: {
               display: true,
-              text: 'Conteo de Observadores'
+              text: 'Conteo de No Observadores'
             },
             beginAtZero: true
           }

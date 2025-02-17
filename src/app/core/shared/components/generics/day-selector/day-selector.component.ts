@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import moment from 'moment';
 import { OtsService } from 'app/core/services/Ots.service';
+import { ViewersService } from 'app/core/services/viewers.service';
 
 
 @Component({
@@ -23,7 +24,10 @@ import { OtsService } from 'app/core/services/Ots.service';
 })
 export class DaySelectorComponent implements OnInit {
   dateSelected: Date = moment('2024/11/01', 'YYYY/MM/DD').toDate();
-  constructor(private otsService: OtsService) { 
+  constructor(
+    private otsService: OtsService,
+    private viewersService: ViewersService,
+  ) { 
   }
 
   ngOnInit(): void {
@@ -33,6 +37,7 @@ export class DaySelectorComponent implements OnInit {
   async onDateChange(event: any): Promise<void> {
     try {
       const selectedDate = event.value;
+      await this.viewersService.updateViewers(selectedDate);
       await this.otsService.updateOTS(selectedDate);
     } catch (error) {
       console.error('Error al obtener OTS:', error);

@@ -7,7 +7,6 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 w-full">
-  
   <div  class="col-span-4 md:col-span-1 bg-card flex flex-col items-center justify-center w-full  p-4 md:p-6  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl">
     <h3 class="w-full font-semibold text-center mb-4">Estado emocional de los espectadores</h3>
     <app-pie-chart
@@ -17,7 +16,7 @@
   </div>
 
   <div  class="col-span-4 md:col-span-3 grid grid-cols-2 bg-card p-4 md:p-6  shadow dark:border-b dark:bg-transparent dark:shadow-none rounded-2xl gap-6 w-full">
-    <div *ngFor="let item of dataChart?.datasets[0].data; let i = index" 
+    <div *ngFor="let item of dataChart?.data?.datasets[0].data; let i = index" 
       class="p-4 rounded-xl flex justify-around items-center w-full" 
       [ngClass]="[
       i === 0 ? 'col-span-2' : 'col-span-1',

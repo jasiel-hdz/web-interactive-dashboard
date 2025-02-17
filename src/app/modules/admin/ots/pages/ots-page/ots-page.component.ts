@@ -76,7 +76,6 @@ export class OtsPageComponent implements OnInit {
   }
 
   updateWeekBarChartOTS(otsWeek) {
-    console.log(otsWeek);
     this.barChartOTS.data.datasets[0].data = otsWeek?.days?.map(day => day.ots_count) || [];
     this.barChartOTS.data.datasets[1].data = otsWeek?.days?.map(day => day.watcher_count) || [];
   }

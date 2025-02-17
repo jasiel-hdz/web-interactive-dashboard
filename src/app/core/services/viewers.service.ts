@@ -56,10 +56,7 @@ export class ViewersService {
       // Update the viewersDay, viewersWeek values
       this.viewersDaySubject.next(dayresponse);
     //   this.viewersWeekSubject.next(weekresponse);
-
-      console.log('Viewers day:', dayresponse);
-    //   console.log('Viewers week:', weekresponse);
-
+    
     } catch (error) {
       Swal.fire('Error', 'There was an issue retrieving the viewers data', 'error');
     } finally {

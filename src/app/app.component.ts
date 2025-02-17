@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { OtsService } from './core/services/Ots.service';
 
 @Component({
     selector: 'app-root',
@@ -11,5 +12,17 @@ export class AppComponent {
     /**
      * Constructor
      */
-    constructor() {}
+    constructor(
+        private otsService: OtsService
+    ) {
+        this.getData();
+    }
+
+    async getData() {
+        try {
+          await this.otsService.initOTS();
+        } catch (error) {
+          console.error('Error al obtener OTS:', error);
+        }
+      }
 }

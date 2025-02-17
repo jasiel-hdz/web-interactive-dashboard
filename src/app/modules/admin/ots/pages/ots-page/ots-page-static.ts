@@ -3,37 +3,37 @@ export const CARD_COUNT_HOURS = [
       id: 1,
       title: 'Observadores No identificados por día',
       colorClass: 'text-purple-500',
-      primaryValue: 21,
+      primaryValue: 0,
       primaryValueText: 'Total',
-      secondaryValue: 13,
-      secondaryValueText: 'Esta semana: '
+      secondaryValue: 0,
+      secondaryValueText: 'El día de hoy: '
     },
     {
       id: 2,
       title: 'Atención promedio por día',
       colorClass: 'text-blue-500',
-      primaryValue: 11,
+      primaryValue: 0,
       primaryValueText: 'Media',
-      secondaryValue: 18,
-      secondaryValueText: 'Esta semana: '
+      secondaryValue: 0,
+      secondaryValueText: 'El día de hoy: '
     },
     {
       id: 3,
       title: 'Promedio de observadores por día',
       colorClass: 'text-green-500',
-      primaryValue: 12,
+      primaryValue: 0,
       primaryValueText: 'Total',
-      secondaryValue: 4,
-      secondaryValueText: 'Esta semana: '
+      secondaryValue: 0,
+      secondaryValueText: 'El día de hoy: '
     },
     {
       id: 4,
       title: 'Atención total por día',
       colorClass: 'text-red-500',
-      primaryValue: 21,
+      primaryValue: 0,
       primaryValueText: 'Media',
-      secondaryValue: 212,
-      secondaryValueText: 'Esta semana: '
+      secondaryValue: 0,
+      secondaryValueText: 'El día de hoy: '
     }
 ];
 

@@ -46,6 +46,7 @@ import { FuseVerticalNavigationGroupItemComponent } from '@fuse/components/navig
 import { FuseVerticalNavigationSpacerItemComponent } from '@fuse/components/navigation/vertical/components/spacer/spacer.component';
 import { FuseScrollbarDirective } from '@fuse/directives/scrollbar/scrollbar.directive';
 import { FuseUtilsService } from '@fuse/services/utils/utils.service';
+import { DaySelectorComponent } from 'app/core/shared/components/generics/day-selector/day-selector.component';
 import {
     delay,
     filter,
@@ -72,6 +73,7 @@ import {
         FuseVerticalNavigationDividerItemComponent,
         FuseVerticalNavigationGroupItemComponent,
         FuseVerticalNavigationSpacerItemComponent,
+        DaySelectorComponent,
     ],
 })
 export class FuseVerticalNavigationComponent

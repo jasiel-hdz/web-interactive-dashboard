@@ -14,7 +14,7 @@
         #navigationContent
     >
         <!-- Content header -->
-        <div class="fuse-vertical-navigation-content-header">
+        <div class=" fuse-vertical-navigation-content-header">
             <ng-content
                 select="[fuseVerticalNavigationContentHeader]"
             ></ng-content>
@@ -81,13 +81,15 @@
         }
 
         <!-- Content footer -->
-        <div class="fuse-vertical-navigation-content-footer">
+        <div class=" py-6 fuse-vertical-navigation-content-footer">
             <ng-content
                 select="[fuseVerticalNavigationContentFooter]"
             ></ng-content>
         </div>
-    </div>
 
+        <app-day-selector></app-day-selector>
+    </div>
+    
     <!-- Footer -->
     <div class="fuse-vertical-navigation-footer">
         <ng-content select="[fuseVerticalNavigationFooter]"></ng-content>
